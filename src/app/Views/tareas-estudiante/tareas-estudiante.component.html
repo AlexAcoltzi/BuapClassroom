@@ -1,0 +1,150 @@
+<!--Estoy usando objetos estaticos para que haga las cosas, estan en el component-->
+
+<div id="Contenedor" class="container mt-3">
+    <!-- Imagen de la clase   -->
+    <div>
+        <div class="card  text-white " *ngFor="let curso of cursos; let i = index ">
+            <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2018/10/10123812/iStock-837483562.jpg" class="card-img cropped1 rounded" alt="...">
+            <div class="card-img-overlay overlay-content">
+
+              <!-- Nombre de la clase -->  
+              <h2 class="card-title" > {{curso.nombre}}</h2>
+               <!-- Numero del salon -->  
+              <h2 class="card-text mb-5">Salón: {{curso.salon}}  </h2>
+                
+              <div class="container">
+                  <div class="col mt-3">
+                      <div class="row">
+                        <div class="col-10 mt-4">
+                             <!--   Horario de la clase -->  
+                            <h5 class="card-text mt-4">Horario: {{curso.dias}} {{curso.horario}}</h5>
+                             <!-- Enlace de la clase -->  
+                            <h5 class="card-text">Aula virtual:  <a class="card-link2" href=""> {{curso.url}}</a> </h5> 
+                        </div>
+                        <div class="col-2 mt-4 ms">
+                             <!-- Boton para acceder a la clase en linea -->  
+                            <button class="Clase text-white btn mt-4">Entrar a Clase</button>
+                        </div>
+                      </div>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+    </div>
+
+      <!-- Contenedor de la página -->
+    <div class="container mt-3">
+        <div class="row">
+
+              <!-- Cartas laterales  -->    
+          <div class="col-9 mb-5" >
+            <div class="card shadow mt-2" style="width: 51rem;"  *ngFor="let tarea of tareas; let i = index "  >
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8">
+                                <h6 class="card-title ">{{tarea.nombre}}</h6>
+                            </div>
+                            <div class="col-4">
+                                <h3 class=""> Fecha de Entrega: {{tarea.fecha}}</h3>
+                            </div>
+
+                            <h3 class="card-subtitle text-muted "> Josue Lima 7 de Mayo</h3>
+                            <h3 class="mt-3">100 pts</h3>
+                            <hr>
+
+                            <h5>Crear un reporte sobre la historia del arte incluyendo imagenes y referencias.</h5>
+                            <h3 class="card-subtitle text-muted  mt-3 mb-2"> Comentarios de la clase</h3>
+
+                            <div class="row" *ngFor="let comentario of comentarios; let i = index "  >
+                                <div class="col-1">
+                                    <img src="{{comentario.imagen}}" width="40" height="40" class="rounded-circle">
+                                </div>
+                                <div class="col-11 mt-3" >
+                                    <h6 class="card-subtitle ">{{comentario.texto}}</h6>
+                                    <h3 class="text-muted">{{comentario.usuario}}</h3>
+                                </div>
+                            </div>
+
+                            <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">Añade un comentario </button>  
+                             
+                           
+                        
+                        </div>
+
+
+                             <!-- Modal para comentarios-->
+                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Nuevo Comentario</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form>
+                                        <div class="mb-3">
+                                          <label for="message-text" class="col-form-label">Comentario :</label>
+                                          <textarea class="form-control" id="message-text"></textarea>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                      <button type="button" class="btn btn-primary">Enviar comentario</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+              <!-- Cartas centrales  -->
+
+          <div class="col-3">
+           <!-- Card de Tareas  --> 
+
+           <div class="card  border border-light mt-2">
+            <div class="card-body">
+               <!-- Código de la clase -->    
+              <h5 class="card-title">Tu trabajo </h5>
+              <button  class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal3" >Añadir Trabajo</button>
+              <button class="Clase text-white btn mt-2 w-100 ">Entregar</button>
+
+              <!-- Modal de Material -->
+              <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Agregar Archivo  </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                             <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+              
+            </div>
+          </div>
+
+
+         
+      </div>
+
+</div>

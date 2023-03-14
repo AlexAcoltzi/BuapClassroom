@@ -1,0 +1,47 @@
+#seccion1 {
+    display:flex; justify-content: center;  align-items: center;
+}
+#seccion2{
+    display:flex; justify-content: center;  align-items: center; margin-top: 30px;
+}
+#divImage{
+    background-image: url(/assets/computadora.png); height: 190px; padding: 40px; width: 900px; border-radius: 10px; background-repeat: no-repeat;
+            background-size: cover; background-position: center;
+}
+#encabezado{
+    color:white; margin-top:40px;
+}
+#seccion3{
+    display:flex; justify-content: center;  align-items: center; margin-top: 15px;
+}
+#contenedor{
+    margin-top: 15px; background-color: white; height: 300px; width: 900px;  border-radius: 10px;
+}
+#cancelar{
+    margin-right: 150px;
+    float:right; height: 30px; width: 120px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:rgb(0, 59, 92);
+    border-radius: 5px;
+    color: rgb(0, 59, 92);
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+form {
+    background-color:transparent; border-radius: 15px;
+}
+#crear {
+    float:right; height: 30px; width: 120px;color:white; background-color: rgb(0, 59, 92); border-radius: 5px; border:0px;
+}
+#personalizar {
+    float:right; height: 30px; width: 120px;
+    background-color: white; color: rgb(0, 59, 92);
+    border-width: 1px;
+    border-style: solid;
+    border-color:rgb(0, 59, 92);
+    border-radius: 5px;
+    font-size: 11px;
+}

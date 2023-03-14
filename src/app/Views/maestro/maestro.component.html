@@ -1,0 +1,17 @@
+<button id="boton2" type="submit" class="btn btn-primary mt-5 me-5 float-end" [routerLink]="['/crearCurso']" routerLinkActive="router-link-active" >Crear Clase </button>
+<div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col align-self-center" *ngFor="let clase of clases; let i = index">
+        <div class=" card shadow mb-5" style="width: 18rem;">
+            <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2018/10/10123812/iStock-837483562.jpg" class="card-img-top" >
+            <div class="card-body">
+              <h4 class="card-title">{{clase.nombre}}</h4>
+              <p class="card-text">Profesor: {{clase.salon}}</p>
+              <a  [routerLink]="['/curso_maestro']" class="btn bg-transparent stretched-link"></a>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+
+

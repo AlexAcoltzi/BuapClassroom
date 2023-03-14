@@ -1,0 +1,68 @@
+
+<!--Interfaz para crear una clase-->
+<section id="seccion1">
+
+    <!--Inicio del formulario-->
+    <form [formGroup]="CursoForm" (ngSubmit)="ObtenerDatos(CursoForm.value)">
+
+        <!--Sección en donde se ingresará el nombre de la clase y la imagen que tendrá en la portada-->
+        <section id="seccion2">
+
+            <!--En este div "divImage" se guarda la imagen que tendrá de fondo-->
+            <div id="divImage">
+                <!--Botón que va a permitir cambiar la imagen-->
+                <button id="personalizar"><i class="fa-solid fa-pen"></i>Personalizar</button>
+                <h4 id="encabezado" class= "text-left">Crear Curso</h4>
+                <!--Se ingresa el nombre de la clase-->
+                <input type="text" class="form-control" id="validationServer01" placeholder="NRC de la clase" formControlName="NombreClase">
+            </div>
+        </section>
+
+        <!--Sección en donde se llenarán los demás campos-->
+        <section id="seccion3">
+            <div id="contenedor" class="shadow p-2 mb-4 bg-white row">
+                <div class="row" style="margin: 5px;">
+                    <div class="col">
+                        <label for="validationDefault01">Sección</label>
+                        <!--Input donde se ingresa la seccion-->
+                        <input type="text" class="form-control" id="validationDefault01" placeholder="Sección" value="001" formControlName="Seccion">
+                    </div>
+                    <div class="col">
+                        <label for="validationDefault02">Materia</label>
+                        <!--Input donde se ingresa el nombre de la materia-->
+                        <input type="text" class="form-control" id="validationDefault02" placeholder="Materia" value="" formControlName="Materia">
+                    </div>
+                </div>
+                <div class="row" style="margin: 5px;">
+                    <div class="col">
+                        <label for="validationDefault03">Datos de la clase</label>
+                        <!--Input donde se ingresa el link de la reunión-->
+                        <input type="text" class="form-control"  placeholder="Datos" formControlName="Datos">
+                    </div>
+                    <div class="col">
+                        <label for="validationDefault04">Matricula Profesor</label>
+                        <!---Input donde se ingresa el nombre del profesor a cargo-->
+                        <input type="text" class="form-control" id="validationDefault04" placeholder="Matricula" formControlName="MatriculaProfesor">
+                    </div>
+                </div>
+                <div class="row" style="margin: 10px;">
+                    <div class="col">
+                        <!--Botón para cancelar la creación de la clase-->
+                        <a id="cancelar" [routerLink]="['/maestro']">Cancelar </a>
+                        <!--Si ocupan en forma de botón seria asi-->
+                        <!--<button id="cancelar" type="reset"> Cancelar </button>-->
+                    </div>
+                    <div class="col">
+                        <!--Botón que confirma y envia los datos-->
+                        <button id="crear" style=" margin-top:3px; margin-right: 150px;" type="submit" >Crear</button>
+                        <!--<input id="crear" style=" margin-top:3px; margin-right: 150px;" type="submit">-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Fin del formulario-->
+
+    </form>  
+</section>
+
+    

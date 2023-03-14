@@ -1,0 +1,72 @@
+
+<div id="Contenedor" class="container mt-3 ">
+    <!-- Imagen de la clase   -->
+    <div>
+        <div class="card  text-white " *ngFor="let curso of cursos; let i = index ">
+            <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2018/10/10123812/iStock-837483562.jpg" class="card-img cropped1 rounded" alt="...">
+            <div class="card-img-overlay overlay-content">
+
+              <!-- Nombre de la clase -->  
+              <h2 class="card-title" > Tareas</h2>
+               <!-- Numero del salon -->  
+              <h4 class="card-text mt-4">Curso: {{curso.nombre}}  </h4>
+            </div>
+          </div>
+    </div>
+
+      <!-- Contenedor de la página    *ngFor="let tarea of tareas; let i = index "  -->
+    <div class="container mt-3">
+        <div class="row">
+              <!-- Cartas laterales  -->    
+          <div class="col-12">
+            <div class="card shadow etiquetas" >
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <h1 class="card-title ">Tarea</h1>
+                            </div>
+                            <div class="col-4">
+                                <h1 class="card-title ">Estado</h1>
+                            </div>
+                            <div class="col-4">
+                                <h1 class=""> Fecha de Entrega</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</div>
+    
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+          <!-- Cartas laterales  -->    
+      <div class="col-12 mt-2" *ngFor="let tarea of tareas; let i = index " >
+        <div class="card shadow" >
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-4">
+                            <h6 class="card-title ">{{tarea.nombre}}</h6>
+                        </div>
+                        <div class="col-4">
+                            <h6 class="card-title ">{{tarea.estatus}}</h6>
+                        </div>
+                        <div class="col-4">
+                            <h3 class=" text-muted"> {{tarea.fecha}}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,51 @@
+
+<div class="row">
+  <div class="col-10">
+    <div class="container ms-5 mt-5 mb-5">
+      <div class="row">
+        <div class="col align-self-center" *ngFor="let clase of clases; let i = index">
+          <div class=" card shadow mb-5" style="width: 18rem;">
+              <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2018/10/10123812/iStock-837483562.jpg" class="card-img-top" >
+              <div class="card-body">
+                <h4 class="card-title">{{clase.nombre}}</h4>
+                <p class="card-text">Profesor: {{clase.docente}}</p>
+                <a [routerLink]="['/curso_alumno']" class="btn bg-transparent stretched-link"></a>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div class="col-2">
+<button id="boton2" type="submit" class="btn btn-primary mt-2 me-4 float-end" data-bs-toggle="modal" data-bs-target="#exampleModal2" > Agregar Curso </button>
+ 
+  </div>
+</div>
+
+
+
+<!-- Modal Agregar Alumno-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Agregar Alumno a Curso </h5>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+              <label for="floatingPassword">Matricula</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre">
+              <label for="floatingPassword">NRC del Curso</label>
+            </div>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+  </div>
+  </div>
+</div>

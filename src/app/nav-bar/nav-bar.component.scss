@@ -1,0 +1,13 @@
+$primary_font_family: "Source Sans Pro", italic, Bold italic, Black italic;
+
+nav {
+  background-color: rgb(0, 59, 92);
+  a {
+    font-family: $primary_font_family;
+    color: white;
+    &.dropdown-item {
+      font-family: $primary_font_family;
+      color: black;
+    }
+  }
+}

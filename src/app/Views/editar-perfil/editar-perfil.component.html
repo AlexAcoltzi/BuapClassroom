@@ -1,0 +1,73 @@
+<div style="width:100%; height: 589px ;  ">
+
+    <!--Seccion de encabezado-->
+    <section style=" display:flex; justify-content: center;  align-items: center;">
+        <div style="background-image: url(/assets/computadora.png); height: 90px; padding: 40px; width: 900px; border-radius: 10px; background-repeat: no-repeat;
+        background-size: cover; background-position: center;">
+            <p  style=" color:white;"class= "text-left">Es posible que otros usuarios puedan ver parte de la información al usar esta plataforma. </p>
+        </div>
+    </section>
+
+    <!-- Sección de información básica-->
+    <section style=" display:flex; justify-content: center;  align-items: center;">
+        <div class="shadow p-2 mb-4 bg-white" style="margin-top: 30px; background-color: white; height: 180px; border-radius: 10px; width: 900px; ">
+            <form class="row" style="background-color: transparent; border-radius: 15px;">
+                <h5 style="padding-top:11px; padding-left: 50px; color: rgb(0, 59, 92);"class="text-left">Informacion básica</h5><br>
+                <p class="col-3" style="padding-left: 50px; padding-top:20px; color:dimgrey">FOTO</p><br>
+                <p class="col-6" style="padding-left: 50px; padding-top: 15px; color:dimgrey">Puedes personalizar tu cuenta con una foto</p>
+
+                <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="col-9" style="background-image: url({{data.perfil}});width:50px; height: 50px; border-radius: 50%; border-color: transparent;
+                background-color:transparent;" (click)="abrirModal()">
+                </button>
+
+                <!-- Modal para cambiar foto-->
+                <div class="modal fade col-auto" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"  style="justify-content: center;width: 950px; height: 800px;">
+                    <div class="modal-dialog" style="margin-left: 500px;">
+                    <div class="modal-content" style="border:0 px">
+                        <br><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="text-align: center; margin-left: 15px;"></button>
+                        <div class="modal-header" style="background-image: url(/assets/computadora.png); height:60px; border-radius:10px; margin-left: 10px; margin-right: 6px;">
+                            
+                        <br><h5 class="modal-title" id="exampleModalLabel" style="color:white; font-size: 17px; margin-left: 9px;">Imagen de perfil</h5>
+                        </div>
+                        <div class="modal-body" style="margin-left: 19px; margin-top: 5px;">
+                            <p style="font-size: 11px;">Si añades una foto de perfil tus compañeros y profesores podrán reconocerte</p>
+                            <hr style="padding-left: 5px; padding-top: 0px; margin-top: 0px; width:400px">
+                            <div class=" vh-80 row m-0 text-center align-items-center justify-content-center" *ngIf="!previsualizacion">
+                                <button class="col-auto" type="button" style="background-image: url({{data.perfil}});width:200px; height: 200px; border-radius: 50%; border-color: transparent; background-color: transparent;"></button>
+                            </div>
+                            <div class=" vh-80 row m-0 text-center align-items-center justify-content-center" *ngIf="previsualizacion">
+                                <button class="col-auto" type="button" style="background-image: url('data:image/png;base64, {{archivo.base64textString}}');width:200px; height: 200px; border-radius: 50%; border-color: transparent; background-color: transparent;"></button>
+                            </div>
+                        </div>
+                        <div class="modal-footer btn-toolbar" role="toolbar" style="margin: 5px;"><br>
+                        <input type="file" accept="image/*" #file (change)="cambiarImagen($event)"/> 
+                        <button type="button" style="margin-right: 30px; width:120px; background-color: rgb(0, 59, 92); color:white; border-radius: 5px; border:0px; margin-top: 8px;" (click)="file.click()"><span class="glyphicon glyphicon-pencil"></span>Cambiar</button>
+                        <button type="button" style="float:right; margin-left: 30px; width:120px; background-color: rgb(0, 59, 92); color:white; border-radius: 5px; border:0px; margin-top: 8px;" (click)="MandarFoto()">Guardar Cambios <span class="glyphicon glyphicon-search"></span></button><br><br>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div style ="padding-left: 30px; margin-left: 20px; margin-top: 0; border:0px; padding-top:0px; background-color: white; width:800px"><hr style="padding-left: 10px; padding-top: 0px; margin-top: 0px;"></div>
+                <p class="col-3" style="padding-left: 50px; margin:0px;color:dimgrey">NOMBRE</p><br>
+                <p class="col-6" style="padding-left: 50px; margin-top:0px; color:dimgrey; margin-bottom: 9px;">{{nombre}}</p>
+            </form>
+        </div>
+    </section>
+
+    <!--Sección de información de la cuenta-->
+    <section style=" display:flex; justify-content: center;  align-items: center;">
+        <div class="shadow p-2 mb-4 bg-white " style="margin-top: 15px; background-color: white; height: 180px; width: 900px;  border-radius: 10px;">
+            <form class="row" style="background-color:transparent; border-radius: 15px;">
+                <h5 style="padding-top:11px; padding-left: 50px; color: rgb(0, 59, 92);"class="text-left">Informacion de la cuenta</h5><br>
+                <p class="col-3" style="padding-left: 50px; padding-top:20px; color:dimgrey">CORREO</p><br>
+                <p class="col-6" style="padding-left: 50px; padding-top:15px; color:dimgrey">{{data.correo}}</p>
+                <div style ="padding-left: 30px; margin-left: 20px; margin-top: 0; border:0px; padding-top:0px; background-color: white; width:800px"><hr style="padding-left: 10px; padding-top: 0px; margin-top: 0px;"></div>
+                <p class="col-3" style="padding-left: 50px; margin:0px;color:dimgrey">CONTRASEÑA</p><br>
+                <p class="col-6" style="padding-left: 50px; margin:0px; color:dimgrey">XXXXXXXXX</p>
+                <button type="button" class="col-9" style="background-image: url(/assets/proximo.png);width:30px; height: 30px; background-color:transparent; border-color: transparent;background-repeat: no-repeat; background-size: cover; background-position: center;"></button>
+            </form>   
+        </div>
+    </section>
+    
+</div>

@@ -1,0 +1,46 @@
+<style>
+   
+   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
+   nav{
+
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: medium;
+    color: white;
+   }
+ 
+  </style>
+
+  <nav id="NavBar"class="navbar navbar-expand-lg navbar-light bg-rgb(0, 59, 92);">
+    <div class="container-fluid">
+        <a href="/" class="d-flex align-items-center  text-dark text-decoration-none">
+            <img src="./assets/buap-logo.png" width="100" height="50">
+        </a>
+      <div class="collapse navbar-collapse ms-3" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a [routerLink]="[]" (click)="goTo()" style="color: white" class="nav-link active" aria-current="page" >Inicio</a>
+          </li>
+          
+          
+        </ul>
+        <form class="d-flex me-5" *ngIf="userLogged">
+          <script>console.log(userLogged)</script>
+            <div class="dropdown d-flex me-5">
+                <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="{{picture}}" alt="mdo" width="32" height="32" class="rounded-circle">
+                    {{name}}
+                </a>
+                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+                    <li><a class="dropdown-item" href="#">Configuracion</a></li>
+                    <li><a class="dropdown-item" [routerLink]="['/editarPerfil']" >Perfil</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" (click)="logOut()" [routerLink]="['/home']" >Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </form>
+      </div>
+    </div>
+  </nav>

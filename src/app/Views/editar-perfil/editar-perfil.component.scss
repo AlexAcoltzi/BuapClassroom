@@ -1,0 +1,28 @@
+div { 
+    display:block;
+    
+    section {   
+
+    div{
+      
+        margin-top: 30px;
+        padding: 3px;
+
+        p {
+            text-align: left;
+            padding-top: 10px;
+            font-size: 12px;
+           
+        }
+        button {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        input[type='file']{
+            display: none;
+        }
+    }
+
+}
+}

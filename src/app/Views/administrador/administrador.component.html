@@ -1,0 +1,293 @@
+<!--Estoy usando objetos estaticos para que haga las cosas, estan en el component-->
+
+<div  id="Contenedor" class="container mt-3">
+    <!-- Imagen de la clase   -->
+    <div>
+        <div class="card  text-white " *ngFor="let curso of cursos; let i = index ">
+            <img src="https://wp-media.petersons.com/blog/wp-content/uploads/2018/10/10123812/iStock-837483562.jpg" class="card-img cropped1 rounded" alt="...">
+            <div class="card-img-overlay overlay-content">
+
+              <!-- Nombre de la clase -->  
+              <h2 class="card-title" > Administrador</h2>
+            </div>
+          </div>
+    </div>
+
+      <!-- Contenedor de la página -->
+    <div class="container mt-3">
+        <div class="row">
+
+              <!-- Cartas laterales  -->    
+          <div class="col-3">
+     
+
+              <!--Card Control Usuarios-->
+              <div class="card  border border-light mt-2">
+                <div class="card-body">
+                    
+                  <h5 class="card-title">Usuarios</h5>
+    
+                  <!--Boton de Agregar Usuario-->
+                  <button  class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#Modal1" >Agregar Usuario</button>
+                  <!--Boton de Editar Usuario-->
+                  <button  class="btn btn-outline-primary mt-2 w-100" data-bs-toggle="modal" data-bs-target="#Modal2" >Editar Usuario</button>
+                  
+                  <!--Boton de Eliminar Usuario-->
+                  <button class="Clase text-white btn mt-2 w-100 " data-bs-toggle="modal" data-bs-target="#Modal3">Eliminar Usuario</button>
+    
+                  <!-- Modal Agregar Usuario-->
+                  <div class="modal fade" id="Modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Usuario </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+                                <label for="floatingPassword">Matricula</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre">
+                                <label for="floatingPassword">Nombre</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Paterno">
+                                <label for="floatingPassword">Apellido Paterno</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Materno">
+                                <label for="floatingPassword">Apellido Materno</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Correo</label>
+                              </div>
+                              
+    
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Agregar Imagen</label>
+                                 <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                 <!-- Modal Editar Usuario-->
+                 <div class="modal fade" id="Modal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+                                <label for="floatingPassword">Matricula</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre">
+                                <label for="floatingPassword">Nombre</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Paterno">
+                                <label for="floatingPassword">Apellido Paterno</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Materno">
+                                <label for="floatingPassword">Apellido Materno</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                                <label for="floatingInput">Correo</label>
+                              </div>
+                              
+    
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Agregar Imagen</label>
+                                 <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                 <!-- Modal Eliminar Usuario-->
+                 <div class="modal fade" id="Modal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar Usuario </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+                                <label for="floatingPassword">Matricula</label>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+    
+    
+                 
+                </div>
+              </div>
+
+               
+               <div class="card  border border-light mt-2">
+                <div class="card-body">
+                    
+                  <h5 class="card-title">Curso</h5>
+    
+                  <!--Boton de Agregar a Curso-->
+                  <button  class="btn btn-outline-primary w-100" data-bs-toggle="modal" data-bs-target="#exampleModal2" >Agregar Alumno </button>
+                  <!--Boton dar de baja Curso-->
+                  <button class="Clase text-white btn mt-2 w-100 " data-bs-toggle="modal" data-bs-target="#exampleModal3">Dar baja Alumno</button>
+    
+                   <!-- Modal Agregar Alumno-->
+                   <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Agregar Alumno a Curso </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+                                <label for="floatingPassword">Matricula</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre">
+                                <label for="floatingPassword">NRC del Curso</label>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                 <!-- Modal Dar Baja Alumno-->
+                 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Dar de baja Alumno a Curso </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Matricula">
+                                <label for="floatingPassword">Matricula</label>
+                              </div>
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="floatingPassword" placeholder="Nombre">
+                                <label for="floatingPassword">NRC del Curso</label>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                  
+                </div>
+              </div>
+            </div>
+
+              <!-- Cartas centrales  -->
+
+          <div class="col-9">
+        
+            <div class="container mt-3">
+                <div class="row">
+                      <!-- Cartas laterales  -->    
+                  <div class="col-12">
+                    <div class="card shadow etiquetas" >
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <h1 class="card-title ">Matricula</h1>
+                                    </div>
+                                    <div class="col-2">
+                                        <h1 class="card-title ">Nombre</h1>
+                                    </div>
+                                    <div class="col-2">
+                                        <h1 class=""> Apellido Paterno</h1>
+                                    </div>
+                                    <div class="col-2">
+                                        <h1 class=""> Apellido Materno</h1>
+                                    </div>
+                                    <div class="col-4">
+                                        <h1 class=""> Correo</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+        </div>
+            
+        </div>
+        
+        <div class="container mt-3">
+            <div class="row">
+                  <!-- Cartas laterales  -->    
+              <div class="col-12 mt-2 mb-2" *ngFor="let usuario of usuarios; let i = index " >
+                <div class="card shadow" >
+                    <div class="card-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-2">
+                                    <h6 class="card-title ">{{usuario.matricula}}</h6>
+                                </div>
+                                <div class="col-2">
+                                    <h6 class="card-title ">{{usuario.nombre}}</h6>
+                                </div>
+                                <div class="col-2">
+                                    <h6 class=" text-muted"> {{usuario.paterno}}</h6>
+                                </div>
+                                <div class="col-2">
+                                    <h6 class=" text-muted"> {{usuario.materno}}</h6>
+                                </div>
+                                <div class="col-4">
+                                    <h6 class=" text-muted"> {{usuario.correo}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+        
+        </div>
+
+
+      </div>
+
+</div>
